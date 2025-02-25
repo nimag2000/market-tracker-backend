@@ -1,9 +1,11 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import os
 import requests
 
 app = Flask(__name__)
 
+CORS(app)  # Enables CORS for all routes
 # Retrieve API keys from environment variables (set these later on Render)
 ALPHA_VANTAGE_API_KEY = os.environ.get("ALPHA_VANTAGE_API_KEY")
 FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY")
